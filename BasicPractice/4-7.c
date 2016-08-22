@@ -5,7 +5,7 @@
 
 /// author: 王兵
 ///time:2016-8-22
-///提交后是部分正确---where wrong?
+///提交后是部分正确---where wrong?  得分： 18/20 测试点三未通过？
 
 //定义数组结点
 typedef struct Node{ //Node是结构体的名字
