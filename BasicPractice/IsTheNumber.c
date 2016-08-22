@@ -37,5 +37,5 @@ int main(){
 	scanf("%d",&num);
 	int res = IsTheNumber(num);
 	printf("%d\n", res);
-	return 0;
+	return 1;
 }
