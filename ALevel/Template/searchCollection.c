@@ -9,7 +9,7 @@ typedef struct
 
 typedef struct 
 {
-	int edges[MAVX][MAVX]; //邻接矩阵
+	int edges[MAXV][MAXV]; //邻接矩阵
 	int vexnum, arcnum;//顶点数和边数
 	VertexType vexs[MAXV];//存储顶点
 }MGraph;

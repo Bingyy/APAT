@@ -1,3 +1,4 @@
+#define N 100
 typedef struct node
 {
 	int data;//结点对应人的编号
