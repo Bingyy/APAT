@@ -36,22 +36,26 @@ int main()
     // num很大，超过了int的表示范围，需要用string来接收
     string num;
     cin >> num;
+    int cnt = (int)num.size();
+    for(int i = 0; i < cnt; i++)
+    {
+        digits.push_back(digHash[num[i]]); // 存储数位
+    }
     
-
- 
-        int cnt = num.size();
-        for(int i = 0; i < cnt; i++)
-        {
-            digits.push_back(digHash[num[i]]); // 存储数位
-        }
-        
-        int sum = 0;
-        // 求和
-        for(auto it = digits.begin(); it != digits.end(); it++)
-        {
-            sum += *it;
-        }
-        
+    int sum = 0;
+    // 求和
+    for(auto it = digits.begin(); it != digits.end(); it++)
+    {
+        sum += *it;
+    }
+    
+    if(sum == 0)
+    {
+        cout << "zero" << endl;
+    }
+    
+    else
+    {
         digits = {}; //清空digits数组，这样不必另外再开一个
         while(sum)
         {
@@ -65,7 +69,7 @@ int main()
             cout << ha[*it] << " ";
         }
         cout << ha[digits[0]] << endl;
-        
-
+    }
+    
     return 0;
 }

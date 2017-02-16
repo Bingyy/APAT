@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5F5623BAAB62CC0003F059DD82ED6A9FFFCF3F87",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E5F03ED1ADA154715A16C4EC0B073A59A5F706DC" : 9223372036854775807,
+    "5F5623BAAB62CC0003F059DD82ED6A9FFFCF3F87" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "113E3706-1526-4625-B9A9-6F7E6D79356C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E5F03ED1ADA154715A16C4EC0B073A59A5F706DC" : "",
+    "5F5623BAAB62CC0003F059DD82ED6A9FFFCF3F87" : "APAT\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "1005",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "1005\/1005.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Bingyy\/APAT",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5F5623BAAB62CC0003F059DD82ED6A9FFFCF3F87"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Bingyy\/APAT.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E5F03ED1ADA154715A16C4EC0B073A59A5F706DC"
+    }
+  ]
+}
