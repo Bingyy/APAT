@@ -1,51 +1,73 @@
-#include<cstdio>
-#include<cstring> 
-// a positive integer N (<=100) 
-int num=0,node[100][3]={{0,0,0}},keys[100]={0},keyloc=0;
-void levelprint()
+#include <stdio.h>
+#include <algorithm>
+#include <queue>
+
+using namespace std;
+
+const int maxn = 110;
+
+// 给定输入总数n，结点编号是：0~n-1
+struct node
 {
-     int level[100]={0},start=0,len=0;
-     level[start]=0,len++;
-     while(len)
-     {
-         if(node[level[start]][1]!=-1)//左子树
-             level[start+len]=node[level[start]][1],len++;
-         if(node[level[start]][2]!=-1)//左子树
-             level[start+len]=node[level[start]][2],len++;
-             
-         if(start) printf(" ");
-         printf("%d",node[level[start]][0]);
-         start++,len--;
-     }
-     
+	int data;
+	int left, right;
+} Node[maxn];
+
+int n, nums[maxn], id = 0;
+
+// 通过中序遍历将数据填入二叉树结点
+// 这是很重要的思路
+
+void inOrder(int root)
+{
+	if(root == -1) return; // 递归边界
+	inOrder(Node[root].left); // 递归遍历左子树
+	Node[root].data = nums[id++]; // 将当前结点值填充进来
+	inOrder(Node[root].right); // 递归遍历右子树
+
 }
-void inorder(int rootloc)
+
+void BFS(int root)
 {
-     if(node[rootloc][1]!=-1)//左子树
-         inorder(node[rootloc][1]);
-     node[rootloc][0]=keys[keyloc],keyloc++;  //本节点 
-    // printf("\n %d  %d  %d  %d",rootloc,node[rootloc][0],node[rootloc][1],node[rootloc][2]);
-     if(node[rootloc][2]!=-1)//右子树
-         inorder(node[rootloc][2]);
-}
-void keyssort()
-{
-     for(int i=1;i<num;i++)
-     {
-             int key=keys[i],loc=i-1;
-             for(;loc>=0;loc--) if(keys[loc]<=key) break;
-             loc++;
-             for(int j=i;j>loc;j--) keys[j]=keys[j-1];
-             keys[loc]=key;
-     }
+	queue<int> q;
+	q.push(root);
+	int num = 0;
+	while(!q.empty())
+	{
+		int top = q.front();
+		q.pop();
+		printf("%d", Node[top].data);
+		num++;
+		if(num < n)
+		{
+			printf(" ");
+		}
+		if(Node[top].left != -1)
+		{
+			q.push(Node[top].left);
+		}
+		if(Node[top].right != -1)
+		{
+			q.push(Node[top].right);
+		}
+	}
 }
 int main()
-{    
-   scanf("%d",&num);
-   for(int i=0;i<num;i++) scanf("%d%d",&node[i][1],&node[i][2]);
-   for(int i=0;i<num;i++) scanf("%d",keys+i);   
-   keyssort();//keys排序 升序
-   inorder(0);//中序遍历，keys归位
-   levelprint();//层序输出     
-   return 0;
+{
+	scanf("%d", &n);
+	// 建树，打架构，后面根据这个架构填充数据即可
+	for(int i = 0; i < n; i++) 
+	{
+		// 这个i是结点编号
+		scanf("%d%d", &Node[i].left, &Node[i].right);
+	}
+	for(int i = 0; i < n; i++)
+	{
+		scanf("%d",&nums[i]); // 输入n个不同的数字
+	}
+	sort(nums, nums + n);
+	inOrder(0); // 从根开始中序遍历
+	BFS(0); // 层序遍历输出
+	printf("\n");
+	return 0;
 }
